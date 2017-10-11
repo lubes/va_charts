@@ -31,6 +31,7 @@ body {
     }
     &.smaller {
         font-size: 24px;
+        margin: 0 auto 20px;
     }
 }
 
@@ -59,6 +60,7 @@ body {
     padding: 40px;
     .chart-entry {
         text-align: center;
+        margin: 20px auto;
         span {
             font-weight: bold;
             font-size: 2rem;

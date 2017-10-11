@@ -7,18 +7,36 @@ Chart.defaults.global.defaultFontFamily = 'Roboto';
 Chart.defaults.global.defaultFontSize = 14;
 Chart.defaults.global.defaultFontColor = '#111';
 
+// Chart Colors
 var chartColors = {
     red: 'rgb(167, 39, 55)',
     blue: 'rgb(14, 94, 193)',
     green: 'rgb(160, 165, 143)',
+    white: 'rgb(255, 255, 255)',
 };
+
+// Tooltip Styles
+var tooltipOptions = {
+    enabled: true,
+    titleFontColor: '#111',
+    bodyFontColor: '#111',
+    backgroundColor: '#fff',
+    cornerRadius: 0,
+    borderColor: '#ddd',
+    borderWidth: 1,
+}
+ 
+// All Years
+var labelYears = 
+    ['January 2015', 'February 2015', 'March 2015', 'Apriil 2015', 'May 2015', 'June 2015', 'July 2015', 'August 2015', 'September 2015', 'October 2015', 'November 2015', 'December 2015', 'January 2016', 'February 2016', 'March 2016', 'Apriil 2016', 'May 2016', 'June 2016', 'July 2016', 'August 2016', 'August 2016', 'September', 'October 2016', 'November 2016', 'December 2016', 'January 2017', 'February 2017', 'March 2017', 'April 2017']
+
 
 // Housing Trends Bar Chart
 var housingTrends = document.getElementById('housingTrends').getContext('2d');
 var housingTrendsChart = new Chart(housingTrends, {
     type: 'bar',
     data: {
-        labels: ['January 2015', 'February 2015', 'March 2015', 'Apriil 2015', 'May 2015', 'June 2015', 'July 2015', 'August 2015', 'September 2015', 'October 2015', 'November 2015', 'December 2015', 'January 2016', 'February 2016', 'March 2016', 'Apriil 2016', 'May 2016', 'June 2016', 'July 2016', 'August 2016', 'August 2016', 'September', 'October 2016', 'November 2016', 'December 2016', 'January 2017', 'February 2017', 'March 2017', 'April 2017'],
+        labels: labelYears,
         datasets: [{
             label: 'Total',
             data: [281, 267, 270, 260, 285, 357, 287, 331, 394, 372, 327, 338, 285, 324, 357, 340, 304, 318, 321, 306, 295, 250, 221, 263, 219, 201, 200, 131, 200 ],
@@ -31,11 +49,8 @@ var housingTrendsChart = new Chart(housingTrends, {
         },
         legend: {
             display: false,
-            position: 'center'
         },
-        tooltips: {
-            enabled: true
-        }
+        tooltips: tooltipOptions
     }
 });
 
@@ -43,20 +58,20 @@ var housingTrendsChart = new Chart(housingTrends, {
 var numberWithCommas = function(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 };
-var dataPack1 = [394, 311, 268, 394, 311, 268, 394, 311, 268, 394, 311, 268, 394, 311, 268, 394, 311, 268, 394, 311, 268, 394, 311, 268];
-var dataPack2 = [291, 251, 293, 291, 251, 293, 291, 251, 293, 291, 251, 293, 291, 251, 293, 291, 251, 293, 291, 251, 293, 291, 251, 293];
-var dataPack3 = [217, 206, 259, 217, 206, 259, 217, 206, 259 ,217, 206, 259, 217, 206, 259, 217, 206, 259, 217, 206, 259 ,217, 206, 259];
-var dates = ['January 2015', 'February 2015', 'March 2015', 'Apriil 2015', 'May 2015', 'June 2015', 'July 2015', 'August 2015', 'September 2015', 'October 2015', 'November 2015', 'December 2015', 'January 2016', 'February 2016', 'March 2016', 'Apriil 2016', 'May 2016', 'June 2016', 'July 2016', 'August 2016', 'August 2016', 'September', 'October 2016', 'November 2016', 'December 2016'];
+var data_1 = [394, 311, 268, 394, 311, 268, 394, 311, 268, 394, 311, 268, 394, 311, 268, 394, 311, 268, 394, 311, 268, 394, 311, 268];
+var data_2 = [291, 251, 293, 291, 251, 293, 291, 251, 293, 291, 251, 293, 291, 251, 293, 291, 251, 293, 291, 251, 293, 291, 251, 293];
+var data_3 = [217, 206, 259, 217, 206, 259, 217, 206, 259 ,217, 206, 259, 217, 206, 259, 217, 206, 259, 217, 206, 259 ,217, 206, 259];
+var dates = labelYears;
 
 var bar_ctx = document.getElementById('programEntries');
 var bar_chart = new Chart(bar_ctx, {
     type: 'bar',
-    data: {
+    data: { 
         labels: dates,
         datasets: [
         {
             label: 'Rapid Re-Housing',
-            data: dataPack1,
+            data: data_1,
             backgroundColor: chartColors.red,
             hoverBackgroundColor: chartColors.red,
             hoverBorderWidth: 1,
@@ -64,7 +79,7 @@ var bar_chart = new Chart(bar_ctx, {
         },
         {
             label: 'Transitional Housing',
-            data: dataPack2,
+            data: data_2,
             backgroundColor: chartColors.blue,
             hoverBackgroundColor: chartColors.blue,
             hoverBorderWidth: 1,
@@ -72,7 +87,7 @@ var bar_chart = new Chart(bar_ctx, {
         },
         {
             label: 'Emergency Shelter',
-            data: dataPack3,
+            data: data_3,
             backgroundColor: chartColors.green,
             hoverBackgroundColor: chartColors.green,
             hoverBorderWidth: 1,
@@ -84,14 +99,7 @@ var bar_chart = new Chart(bar_ctx, {
      		animation: {
         	duration: 10,
         },
-        tooltips: {
-            mode: 'label',
-            callbacks: {
-            label: function(tooltipItem, data) { 
-                return data.datasets[tooltipItem.datasetIndex].label + ": " + numberWithCommas(tooltipItem.yLabel);
-            }
-          }
-         },
+        tooltips: tooltipOptions,
         scales: {
           xAxes: [{ 
           	stacked: true, 
@@ -114,55 +122,28 @@ var bar_chart = new Chart(bar_ctx, {
 });
 
 // System Dimensions
-var randomScalingFactor = function() {
-    return (Math.random() > 0.5 ? 1.0 : -1.0) * Math.round(Math.random() * 100);
-}
 var config = {
   type: 'line',
   data: {
-    labels: ["March 2015", "July 2015", "Novemeber 2015", "March 2016", "July 2016", "November 2016", "March 2017"],
+    labels: labelYears,
     datasets: [{
       label: "Rapid Re-Housing",
-      backgroundColor: chartColors.red,
-      borderColor: chartColors.red,
-      data: [
-        randomScalingFactor(),
-        randomScalingFactor(),
-        randomScalingFactor(),
-        randomScalingFactor(),
-        randomScalingFactor(),
-        randomScalingFactor(),
-        randomScalingFactor()
-      ],
+      backgroundColor: chartColors.green,
+      borderColor: chartColors.green,
+      data: [ 92, 88, 88, 90, 87, 79, 88, 84, 83, 90, 90, 87, 87, 80, 89, 83, 63, 78, 70, 92, 88, 88, 90, 87, 79, 88, 84, 83, 90, 90, 87, 87, 80, 89, 83, 63, 78, 70 ],
       fill: false,
     }, {
       label: "Transitional Housing",
       fill: false,
       backgroundColor: chartColors.blue,
       borderColor: chartColors.blue,
-      data: [
-        randomScalingFactor(),
-        randomScalingFactor(),
-        randomScalingFactor(),
-        randomScalingFactor(),
-        randomScalingFactor(),
-        randomScalingFactor(),
-        randomScalingFactor()
-      ],
+      data: [ 53, 61, 64, 76, 54, 46, 65, 54, 43, 48, 50, 57, 57, 50, 59, 43, 63, 58, 50, 53, 61, 64, 76, 54, 46, 65, 54, 43, 48, 50, 57, 57, 50, 59, 43, 63, 58, 50 ],
     }, {
       label: "Emergency Shelter",
       fill: false,
-      backgroundColor: chartColors.green,
-      borderColor: chartColors.green,
-      data: [
-        randomScalingFactor(),
-        randomScalingFactor(),
-        randomScalingFactor(),
-        randomScalingFactor(),
-        randomScalingFactor(),
-        randomScalingFactor(),
-        randomScalingFactor()
-      ],
+      backgroundColor: chartColors.red,
+      borderColor: chartColors.red,
+      data: [ 22, 28, 28, 20, 27, 29, 28, 24, 23, 20, 20, 27, 27, 20, 23, 23, 23, 28, 20, 22, 28, 28, 20, 27, 29, 28, 24, 23, 20, 20, 27, 27, 20, 23, 23, 23, 28, 20 ],
     }]
   },
   options: {
@@ -171,14 +152,7 @@ var config = {
       display: true,
       text: '% Exits to Permanent Housing'
     },
-    tooltips: {
-        enabled: true,
-        mode: 'label',
-    },
-    hover: {
-      mode: 'nearest',
-      intersect: true
-    },
+    tooltips: tooltipOptions,
     scales: {
       xAxes: [{
         display: true,
@@ -210,9 +184,7 @@ var demo_options = {
         display: false,
         position: 'center'
     },
-    tooltips: {
-        enabled: true
-    },
+    tooltips: tooltipOptions,
     scales: {
       xAxes: [{
         display: true,
@@ -247,6 +219,59 @@ var demo_rapid_2_chart = new Chart(demo_rapid_2, {
     },
     options: demo_options
 });
+var demo_rapid_3 = document.getElementById('demo_rapid_3').getContext('2d');
+var demo_rapid_3_chart = new Chart(demo_rapid_3, {
+    type: 'horizontalBar',
+    data: {
+        labels: ['Non-Chronic', 'Chronic'],
+        datasets: [{
+            label: 'Total', 
+            data: [90, 10, 0],
+            backgroundColor: chartColors.green,
+        }]
+    },
+    options: demo_options
+});
+var demo_rapid_4 = document.getElementById('demo_rapid_4').getContext('2d');
+var demo_rapid_4_chart = new Chart(demo_rapid_4, {
+    type: 'horizontalBar',
+    data: {
+        labels: ['Male', 'Female'],
+        datasets: [{
+            label: 'Total', 
+            data: [88, 12, 0],
+            backgroundColor: chartColors.green,
+        }]
+    },
+    options: demo_options
+});
+var demo_rapid_5 = document.getElementById('demo_rapid_5').getContext('2d');
+var demo_rapid_5_chart = new Chart(demo_rapid_5, {
+    type: 'horizontalBar',
+    data: {
+        labels: ['All Other Eras', 'Veterans ofIraq/Afghanistan'],
+        datasets: [{
+            label: 'Total', 
+            data: [76, 24, 0],
+            backgroundColor: chartColors.green,
+        }]
+    },
+    options: demo_options
+});
+var demo_rapid_6 = document.getElementById('demo_rapid_6').getContext('2d');
+var demo_rapid_6_chart = new Chart(demo_rapid_6, {
+    type: 'horizontalBar',
+    data: {
+        labels: ['(1)Minimal Assistance Needed', '(2)Rapdi Re-Housing', '(3)Permanent Supportive', '(4)Permanent Supportive'],
+        datasets: [{
+            label: 'Total', 
+            data: [17, 31, 40, 12],
+            backgroundColor: chartColors.green,
+        }]
+    },
+    options: demo_options
+});
+ 
 
 // Demographics:  Emergency Housing
 var demo_em_1 = document.getElementById('demo_em_1').getContext('2d');

@@ -10,7 +10,8 @@ body {
   .chart-title.sub {
     font-size: 18px; }
   .chart-title.smaller {
-    font-size: 24px; }
+    font-size: 24px;
+    margin: 0 auto 20px; }
 
 .red {
   color: #a72736; }
@@ -30,7 +31,8 @@ body {
   background: #fff;
   padding: 40px; }
   .chart-wrap .chart-entry {
-    text-align: center; }
+    text-align: center;
+    margin: 20px auto; }
     .chart-wrap .chart-entry span {
       font-weight: bold;
       font-size: 2rem; }

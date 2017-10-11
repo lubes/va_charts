@@ -104,10 +104,39 @@
                                 <canvas id="demo_rapid_2"></canvas>
                             </div>
                         </div>
+                        <div class="col-xs-12 col-sm-12 col-md-6">
+                            <div class="chart-entry">
+                                <h3 class="chart-title sub">Chronic Homeless Status</h3>
+                                <p>Chronic Status</p>
+                                <canvas id="demo_rapid_3"></canvas> 
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-6">
+                            <div class="chart-entry">
+                                <h3 class="chart-title sub">Gender</h3>
+                                <p>Gender Status</p>
+                                <canvas id="demo_rapid_4"></canvas>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-6">
+                            <div class="chart-entry">
+                                <h3 class="chart-title sub">Veteran Service Era</h3>
+                                <p>Veteran Service Era</p>
+                                <canvas id="demo_rapid_5"></canvas> 
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-6">
+                            <div class="chart-entry">
+                                <h3 class="chart-title sub">VI-SPDAT Score*</h3>
+                                <p>Priority Score Descriptions</p>
+                                <canvas id="demo_rapid_6"></canvas>
+                                <p class="small">*Includes all system components.</p>
+                            </div>
+                        </div>
                     </div>      
                 </div>
                 <!-- Emergency Shelter -->
-                <div class="tab-pane" id="demo_2" role="tabpanel">
+                <div class="tab-pane fade" id="demo_2" role="tabpanel">
                     <h2 class="chart-title smaller">Emergency Shelter</h2>
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-6">
