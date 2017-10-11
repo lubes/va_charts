@@ -1,0 +1,36 @@
+body {
+  width: 100% !important;
+  overflow-x: hidden !important;
+  position: relative; }
+
+.chart-title {
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center; }
+  .chart-title.sub {
+    font-size: 18px; }
+  .chart-title.smaller {
+    font-size: 24px; }
+
+.red {
+  color: #a72736; }
+
+.blue {
+  color: #096b9a; }
+
+.green {
+  color: #a0a58f; }
+
+.charts-wrapper {
+  padding: 100px 0;
+  background: #f1f1f1; }
+
+.chart-wrap {
+  margin: 25px auto 50px;
+  background: #fff;
+  padding: 40px; }
+  .chart-wrap .chart-entry {
+    text-align: center; }
+    .chart-wrap .chart-entry span {
+      font-weight: bold;
+      font-size: 2rem; }

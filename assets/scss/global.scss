@@ -1,0 +1,67 @@
+// Colors
+$va_red:        #a72736;
+$va_green:      #a0a58f;
+$va_lt_green:   #c0c3b7;
+$va_blue:       #096b9a;
+$light:         #f1f1f1;
+$grey:          #ddd;
+
+// Easing 
+@mixin easing() {
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+body {
+    width: 100% !important;
+    overflow-x: hidden !important;
+    position: relative;
+} 
+
+// Fonts
+
+.chart-title {
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    &.sub {
+        font-size: 18px;
+    }
+    &.smaller {
+        font-size: 24px;
+    }
+}
+
+// Font Color Styles
+
+.red {
+    color: $va_red;
+}
+
+.blue {
+    color: $va_blue;
+}
+
+.green {
+    color: $va_green;
+}
+
+.charts-wrapper {
+    padding: 100px 0;
+    background: $light;
+}
+
+.chart-wrap {
+    margin: 25px auto 50px;
+    background: #fff;
+    padding: 40px;
+    .chart-entry {
+        text-align: center;
+        span {
+            font-weight: bold;
+            font-size: 2rem;
+        }
+    }
+}
