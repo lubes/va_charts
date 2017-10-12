@@ -68,6 +68,14 @@
             </div>
         </div>
         
+        <!-- Time to Housing -->
+        <div class="charts-sec">
+            <h2 class="chart-title">Time to Housing</h2>
+            <div class="chart-wrap">
+                <canvas id="timeHousing"></canvas> 
+            </div>
+        </div>
+        
         <!-- Demographics -->
         <div class="charts-sec">
             <h2 class="chart-title">Demographics</h2>
@@ -81,6 +89,8 @@
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <a class="dropdown-item nav-link" data-toggle="tab" href="#demo_1" role="tab">Rapid Re-Housing</a>
                     <a class="dropdown-item nav-link"  data-toggle="tab" href="#demo_2" role="tab">Emergency Shelter</a>
+                    <a class="dropdown-item nav-link"  data-toggle="tab" href="#demo_3" role="tab">Transitional Housing</a>
+                    <a class="dropdown-item nav-link"  data-toggle="tab" href="#demo_4" role="tab">Permanent Supportive Housing</a>
                 </div>
             </div>
 
@@ -151,6 +161,133 @@
                                 <h3 class="chart-title sub">Where are Veterans Going?</h3>
                                 <p>Destination</p>
                                 <canvas id="demo_em_2"></canvas>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-6">
+                            <div class="chart-entry">
+                                <h3 class="chart-title sub">Chronic Homeless Status</h3>
+                                <p>Chronic Status</p>
+                                <canvas id="demo_em_3"></canvas> 
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-6">
+                            <div class="chart-entry">
+                                <h3 class="chart-title sub">Gender</h3>
+                                <p>Gender Status</p>
+                                <canvas id="demo_em_4"></canvas>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-6">
+                            <div class="chart-entry">
+                                <h3 class="chart-title sub">Veteran Service Era</h3>
+                                <p>Veteran Service Era</p>
+                                <canvas id="demo_em_5"></canvas> 
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-6">
+                            <div class="chart-entry">
+                                <h3 class="chart-title sub">VI-SPDAT Score*</h3>
+                                <p>Priority Score Descriptions</p>
+                                <canvas id="demo_em_6"></canvas>
+                                <p class="small">*Includes all system components.</p>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+                <!-- Transitional Housing -->
+                <div class="tab-pane fade" id="demo_3" role="tabpanel">
+                    <h2 class="chart-title smaller">Emergency Shelter</h2>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-6">
+                            <div class="chart-entry">
+                                <h3 class="chart-title sub">Where are Veterans Coming From?</h3>
+                                <p>Prior Living Situation</p>
+                                <canvas id="demo_trans_1"></canvas> 
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-6">
+                            <div class="chart-entry">
+                                <h3 class="chart-title sub">Where are Veterans Going?</h3>
+                                <p>Destination</p>
+                                <canvas id="demo_trans_2"></canvas>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-6">
+                            <div class="chart-entry">
+                                <h3 class="chart-title sub">Chronic Homeless Status</h3>
+                                <p>Chronic Status</p>
+                                <canvas id="demo_trans_3"></canvas> 
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-6">
+                            <div class="chart-entry">
+                                <h3 class="chart-title sub">Gender</h3>
+                                <p>Gender Status</p>
+                                <canvas id="demo_trans_4"></canvas>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-6">
+                            <div class="chart-entry">
+                                <h3 class="chart-title sub">Veteran Service Era</h3>
+                                <p>Veteran Service Era</p>
+                                <canvas id="demo_trans_5"></canvas> 
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-6">
+                            <div class="chart-entry">
+                                <h3 class="chart-title sub">VI-SPDAT Score*</h3>
+                                <p>Priority Score Descriptions</p>
+                                <canvas id="demo_trans_6"></canvas>
+                                <p class="small">*Includes all system components.</p>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+                <!-- Permanent Housing -->
+                <div class="tab-pane fade" id="demo_4" role="tabpanel">
+                    <h2 class="chart-title smaller">Emergency Shelter</h2>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-6">
+                            <div class="chart-entry">
+                                <h3 class="chart-title sub">Where are Veterans Coming From?</h3>
+                                <p>Prior Living Situation</p>
+                                <canvas id="demo_perm_1"></canvas> 
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-6">
+                            <div class="chart-entry">
+                                <h3 class="chart-title sub">Where are Veterans Going?</h3>
+                                <p>Destination</p>
+                                <canvas id="demo_perm_2"></canvas>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-6">
+                            <div class="chart-entry">
+                                <h3 class="chart-title sub">Chronic Homeless Status</h3>
+                                <p>Chronic Status</p>
+                                <canvas id="demo_perm_3"></canvas> 
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-6">
+                            <div class="chart-entry">
+                                <h3 class="chart-title sub">Gender</h3>
+                                <p>Gender Status</p>
+                                <canvas id="demo_perm_4"></canvas>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-6">
+                            <div class="chart-entry">
+                                <h3 class="chart-title sub">Veteran Service Era</h3>
+                                <p>Veteran Service Era</p>
+                                <canvas id="demo_perm_5"></canvas> 
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-6">
+                            <div class="chart-entry">
+                                <h3 class="chart-title sub">VI-SPDAT Score*</h3>
+                                <p>Priority Score Descriptions</p>
+                                <canvas id="demo_perm_6"></canvas>
+                                <p class="small">*Includes all system components.</p>
                             </div>
                         </div>
                     </div> 
