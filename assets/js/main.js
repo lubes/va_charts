@@ -12,6 +12,7 @@ var chartColors = {
     red: 'rgb(167, 39, 55)',
     blue: 'rgb(14, 94, 193)',
     green: 'rgb(160, 165, 143)',
+    lt_green: 'rgb(192, 195, 183)',
     white: 'rgb(255, 255, 255)',
 };
 
@@ -175,6 +176,86 @@ var config = {
 var ctx = document.getElementById("systemDimensions").getContext("2d");
 window.myLine = new Chart(ctx, config);
 
+//  Time to Housing Chart
+var time_to_housing = function(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+};
+var data_1 = [0, 108.5];
+var data_2 = [0, 8];
+var data_3 = [0, 7];
+var data_4 = [26, 0];
+
+var bar_ctx = document.getElementById('timeHousing');
+var bar_chart = new Chart(bar_ctx, {
+    type: 'horizontalBar',
+    data: { 
+        labels: ['SSCF - Rapid Re-Housing', 'VASH'],
+        datasets: [
+        {
+            label: 'Voucher to Move-In',
+            data: data_1,
+            backgroundColor: chartColors.lt_green,
+            hoverBackgroundColor: chartColors.lt_green,
+            hoverBorderWidth: 1,
+            hoverBorderColor: 'lightgrey'
+        },
+        {
+            label: 'Housing Authority',
+            data: data_2,
+            backgroundColor: chartColors.green,
+            hoverBackgroundColor: chartColors.green,
+            hoverBorderWidth: 1,
+            hoverBorderColor: 'lightgrey'
+        },
+        {
+            label: 'Admission to Housing Authority',
+            data: data_3,
+            backgroundColor: chartColors.blue,
+            hoverBackgroundColor: chartColors.blue,
+            hoverBorderWidth: 1,
+            hoverBorderColor: 'lightgrey'
+        },
+        {
+            label: 'Entry to Move-In - SSV',
+            data: data_4,
+            backgroundColor: chartColors.red,
+            hoverBackgroundColor: chartColors.red,
+            hoverBorderWidth: 1,
+            hoverBorderColor: 'lightgrey'
+        }
+        ]
+    },
+    options: {
+     		animation: {
+        	duration: 10,
+        },
+        tooltips: tooltipOptions,
+        scales: {
+          xAxes: [{ 
+          	stacked: true, 
+            display: true,
+            scaleLabel: {
+              display: true,
+              labelString: 'Total Average Days to Permanent Housing'
+            },
+            gridLines: { display: false },
+            }],
+          yAxes: [{ 
+          	stacked: true, 
+            display: true,
+            scaleLabel: {
+                display: true,
+                labelString: 'SSVF - Rapid Re-Housing'
+            },
+            ticks: {
+        			callback: function(value) { return time_to_housing(value); },
+     				}, 
+            }],
+        },
+        legend: {display: true}
+    }
+});
+
 // Demographics Charts
 var demo_options = {
     title: {
@@ -271,6 +352,7 @@ var demo_rapid_6_chart = new Chart(demo_rapid_6, {
     },
     options: demo_options
 });
+
  
 
 // Demographics:  Emergency Housing
@@ -282,7 +364,7 @@ var demo_em_1_chart = new Chart(demo_em_1, {
         datasets: [{
             label: 'Total', 
             data: [51, 34, 6, 9, 0],
-            backgroundColor: chartColors.green,
+            backgroundColor: chartColors.red,
         }]
     },
     options: demo_options
@@ -295,8 +377,222 @@ var demo_em_2_chart = new Chart(demo_em_2, {
         datasets: [{
             label: 'Total', 
             data: [10, 33, 17, 18, 22],
-            backgroundColor: chartColors.green,
+            backgroundColor: chartColors.red,
         }]
     },
     options: demo_options
 });
+var demo_em_3 = document.getElementById('demo_em_3').getContext('2d');
+var demo_em_3 = new Chart(demo_em_3, {
+    type: 'horizontalBar',
+    data: {
+        labels: ['Non-Chronic', 'Chronic'],
+        datasets: [{
+            label: 'Total', 
+            data: [90, 10, 0],
+            backgroundColor: chartColors.red,
+        }]
+    },
+    options: demo_options
+});
+var demo_em_4 = document.getElementById('demo_em_4').getContext('2d');
+var demo_em_4_chart = new Chart(demo_em_4, {
+    type: 'horizontalBar',
+    data: {
+        labels: ['Male', 'Female'],
+        datasets: [{
+            label: 'Total', 
+            data: [88, 12, 0],
+            backgroundColor: chartColors.red,
+        }]
+    },
+    options: demo_options
+});
+var demo_em_5 = document.getElementById('demo_em_5').getContext('2d');
+var demo_em_5_chart = new Chart(demo_em_5, {
+    type: 'horizontalBar',
+    data: {
+        labels: ['All Other Eras', 'Veterans ofIraq/Afghanistan'],
+        datasets: [{
+            label: 'Total', 
+            data: [76, 24, 0],
+            backgroundColor: chartColors.red,
+        }]
+    },
+    options: demo_options
+});
+var demo_em_6 = document.getElementById('demo_em_6').getContext('2d');
+var demo_em_6_chart = new Chart(demo_em_6, {
+    type: 'horizontalBar',
+    data: {
+        labels: ['(1)Minimal Assistance Needed', '(2)Rapdi Re-Housing', '(3)Permanent Supportive', '(4)Permanent Supportive'],
+        datasets: [{
+            label: 'Total', 
+            data: [17, 31, 40, 12],
+            backgroundColor: chartColors.red,
+        }]
+    },
+    options: demo_options
+});
+
+// Demographics:  Transitional Housing
+var demo_trans_1 = document.getElementById('demo_trans_1').getContext('2d');
+var demo_trans_1_chart = new Chart(demo_trans_1, {
+    type: 'horizontalBar',
+    data: {
+        labels: ['Unshelteblue', 'Temporary', 'Permanent', 'Institutional', 'Other'],
+        datasets: [{
+            label: 'Total', 
+            data: [51, 34, 6, 9, 0],
+            backgroundColor: chartColors.blue,
+        }]
+    },
+    options: demo_options
+});
+var demo_trans_2 = document.getElementById('demo_trans_2').getContext('2d');
+var demo_trans_2_chart = new Chart(demo_trans_2, {
+    type: 'horizontalBar',
+    data: {
+        labels: ['Unshelteblue', 'Temporary', 'Permanent', 'Institutional', 'Other'],
+        datasets: [{
+            label: 'Total', 
+            data: [10, 33, 17, 18, 22],
+            backgroundColor: chartColors.blue,
+        }]
+    },
+    options: demo_options
+});
+var demo_trans_3 = document.getElementById('demo_trans_3').getContext('2d');
+var demo_trans_3 = new Chart(demo_trans_3, {
+    type: 'horizontalBar',
+    data: {
+        labels: ['Non-Chronic', 'Chronic'],
+        datasets: [{
+            label: 'Total', 
+            data: [90, 10, 0],
+            backgroundColor: chartColors.blue,
+        }]
+    },
+    options: demo_options
+});
+var demo_trans_4 = document.getElementById('demo_trans_4').getContext('2d');
+var demo_trans_4_chart = new Chart(demo_trans_4, {
+    type: 'horizontalBar',
+    data: {
+        labels: ['Male', 'Female'],
+        datasets: [{
+            label: 'Total', 
+            data: [88, 12, 0],
+            backgroundColor: chartColors.blue,
+        }]
+    },
+    options: demo_options
+});
+var demo_trans_5 = document.getElementById('demo_trans_5').getContext('2d');
+var demo_trans_5_chart = new Chart(demo_trans_5, {
+    type: 'horizontalBar',
+    data: {
+        labels: ['All Other Eras', 'Veterans ofIraq/Afghanistan'],
+        datasets: [{
+            label: 'Total', 
+            data: [76, 24, 0],
+            backgroundColor: chartColors.blue,
+        }]
+    },
+    options: demo_options
+});
+var demo_trans_6 = document.getElementById('demo_trans_6').getContext('2d');
+var demo_trans_6_chart = new Chart(demo_trans_6, {
+    type: 'horizontalBar',
+    data: {
+        labels: ['(1)Minimal Assistance Needed', '(2)Rapdi Re-Housing', '(3)Permanent Supportive', '(4)Permanent Supportive'],
+        datasets: [{
+            label: 'Total', 
+            data: [17, 31, 40, 12],
+            backgroundColor: chartColors.blue,
+        }]
+    },
+    options: demo_options
+});
+
+
+// Demographics:  Permanent Supportive Housing
+var demo_perm_1 = document.getElementById('demo_perm_1').getContext('2d');
+var demo_perm_1_chart = new Chart(demo_perm_1, {
+    type: 'horizontalBar',
+    data: {
+        labels: ['Unsheltelt_green', 'Temporary', 'Permanent', 'Institutional', 'Other'],
+        datasets: [{
+            label: 'Total', 
+            data: [51, 34, 6, 9, 0],
+            backgroundColor: chartColors.lt_green,
+        }]
+    },
+    options: demo_options
+});
+var demo_perm_2 = document.getElementById('demo_perm_2').getContext('2d');
+var demo_perm_2_chart = new Chart(demo_perm_2, {
+    type: 'horizontalBar',
+    data: {
+        labels: ['Unsheltelt_green', 'Temporary', 'Permanent', 'Institutional', 'Other'],
+        datasets: [{
+            label: 'Total', 
+            data: [10, 33, 17, 18, 22],
+            backgroundColor: chartColors.lt_green,
+        }]
+    },
+    options: demo_options
+});
+var demo_perm_3 = document.getElementById('demo_perm_3').getContext('2d');
+var demo_perm_3 = new Chart(demo_perm_3, {
+    type: 'horizontalBar',
+    data: {
+        labels: ['Non-Chronic', 'Chronic'],
+        datasets: [{
+            label: 'Total', 
+            data: [90, 10, 0],
+            backgroundColor: chartColors.lt_green,
+        }]
+    },
+    options: demo_options
+});
+var demo_perm_4 = document.getElementById('demo_perm_4').getContext('2d');
+var demo_perm_4_chart = new Chart(demo_perm_4, {
+    type: 'horizontalBar',
+    data: {
+        labels: ['Male', 'Female'],
+        datasets: [{
+            label: 'Total', 
+            data: [88, 12, 0],
+            backgroundColor: chartColors.lt_green,
+        }]
+    },
+    options: demo_options
+});
+var demo_perm_5 = document.getElementById('demo_perm_5').getContext('2d');
+var demo_perm_5_chart = new Chart(demo_perm_5, {
+    type: 'horizontalBar',
+    data: {
+        labels: ['All Other Eras', 'Veterans ofIraq/Afghanistan'],
+        datasets: [{
+            label: 'Total', 
+            data: [76, 24, 0],
+            backgroundColor: chartColors.lt_green,
+        }]
+    },
+    options: demo_options
+});
+var demo_perm_6 = document.getElementById('demo_perm_6').getContext('2d');
+var demo_perm_6_chart = new Chart(demo_perm_6, {
+    type: 'horizontalBar',
+    data: {
+        labels: ['(1)Minimal Assistance Needed', '(2)Rapdi Re-Housing', '(3)Permanent Supportive', '(4)Permanent Supportive'],
+        datasets: [{
+            label: 'Total', 
+            data: [17, 31, 40, 12],
+            backgroundColor: chartColors.lt_green,
+        }]
+    },
+    options: demo_options
+});
+
