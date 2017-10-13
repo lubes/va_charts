@@ -196,7 +196,7 @@
                 </div>
                 <!-- Transitional Housing -->
                 <div class="tab-pane fade" id="demo_3" role="tabpanel">
-                    <h2 class="chart-title smaller">Emergency Shelter</h2>
+                    <h2 class="chart-title smaller">Transitional Housing</h2>
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-6">
                             <div class="chart-entry">
@@ -245,7 +245,7 @@
                 </div>
                 <!-- Permanent Housing -->
                 <div class="tab-pane fade" id="demo_4" role="tabpanel">
-                    <h2 class="chart-title smaller">Emergency Shelter</h2>
+                    <h2 class="chart-title smaller">Permanent Housing</h2>
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-6">
                             <div class="chart-entry">

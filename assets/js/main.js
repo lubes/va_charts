@@ -29,7 +29,7 @@ var tooltipOptions = {
  
 // All Years
 var labelYears = 
-    ['January 2015', 'February 2015', 'March 2015', 'Apriil 2015', 'May 2015', 'June 2015', 'July 2015', 'August 2015', 'September 2015', 'October 2015', 'November 2015', 'December 2015', 'January 2016', 'February 2016', 'March 2016', 'Apriil 2016', 'May 2016', 'June 2016', 'July 2016', 'August 2016', 'August 2016', 'September', 'October 2016', 'November 2016', 'December 2016', 'January 2017', 'February 2017', 'March 2017', 'April 2017']
+    ['January 2015', 'February 2015', 'March 2015', 'April 2015', 'May 2015', 'June 2015', 'July 2015', 'August 2015', 'September 2015', 'October 2015', 'November 2015', 'December 2015', 'January 2016', 'February 2016', 'March 2016', 'April 2016', 'May 2016', 'June 2016', 'July 2016', 'August 2016', 'September 2016', 'October 2016', 'November 2016', 'December 2016', 'January 2017', 'February 2017', 'March 2017', 'April 2017']
 
 
 // Housing Trends Bar Chart
@@ -40,7 +40,7 @@ var housingTrendsChart = new Chart(housingTrends, {
         labels: labelYears,
         datasets: [{
             label: 'Total',
-            data: [281, 267, 270, 260, 285, 357, 287, 331, 394, 372, 327, 338, 285, 324, 357, 340, 304, 318, 321, 306, 295, 250, 221, 263, 219, 201, 200, 131, 200 ],
+            data: [281, 267, 270, 260, 285, 357, 287, 331, 394, 372, 327, 338, 285, 324, 357, 340, 304, 318, 321, 306, 295, 250, 221, 263, 219, 201, 200, 131 ],
             backgroundColor: chartColors.red,
         }]
     },
@@ -59,9 +59,9 @@ var housingTrendsChart = new Chart(housingTrends, {
 var numberWithCommas = function(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 };
-var data_1 = [394, 311, 268, 394, 311, 268, 394, 311, 268, 394, 311, 268, 394, 311, 268, 394, 311, 268, 394, 311, 268, 394, 311, 268];
-var data_2 = [291, 251, 293, 291, 251, 293, 291, 251, 293, 291, 251, 293, 291, 251, 293, 291, 251, 293, 291, 251, 293, 291, 251, 293];
-var data_3 = [217, 206, 259, 217, 206, 259, 217, 206, 259 ,217, 206, 259, 217, 206, 259, 217, 206, 259, 217, 206, 259 ,217, 206, 259];
+var data_1 = [394, 311, 268, 216, 199, 185, 180, 179, 128, 217, 373, 352, 333, 301, 330, 197, 200, 184, 201, 200, 137, 135, 113, 325, 294, 266, 257];
+var data_2 = [291, 251, 293, 270, 357, 342, 306, 288, 298, 312, 189, 251, 229, 263, 275, 259, 296, 268, 249, 269, 232, 218, 195, 198, 208, 181, 172];
+var data_3 = [217, 206, 259, 204, 235, 230, 220, 276, 288, 268, 209, 213, 159, 250, 235, 169, 185, 174, 159, 221, 162, 152, 146, 166, 177, 161, 192];
 var dates = labelYears;
 
 var bar_ctx = document.getElementById('programEntries');
@@ -131,20 +131,20 @@ var config = {
       label: "Rapid Re-Housing",
       backgroundColor: chartColors.green,
       borderColor: chartColors.green,
-      data: [ 92, 88, 88, 90, 87, 79, 88, 84, 83, 90, 90, 87, 87, 80, 89, 83, 63, 78, 70, 92, 88, 88, 90, 87, 79, 88, 84, 83, 90, 90, 87, 87, 80, 89, 83, 63, 78, 70 ],
+      data: [ 92, 88, 88, 90, 87, 70, 79, 88, 84, 83, 90, 90, 87, 87, 80, 89, 83, 78, 63, 70, 65, 70, 70, 74, 81, 76, 65 ],
       fill: false,
     }, {
       label: "Transitional Housing",
       fill: false,
       backgroundColor: chartColors.blue,
       borderColor: chartColors.blue,
-      data: [ 53, 61, 64, 76, 54, 46, 65, 54, 43, 48, 50, 57, 57, 50, 59, 43, 63, 58, 50, 53, 61, 64, 76, 54, 46, 65, 54, 43, 48, 50, 57, 57, 50, 59, 43, 63, 58, 50 ],
+      data: [ 53, 53, 61, 53, 51, 52, 49, 60, 59, 60, 63, 65, 60, 56, 56, 58, 50, 50, 45, 53, 46, 54, 47, 69, 54, 55, 60 ],
     }, {
       label: "Emergency Shelter",
       fill: false,
       backgroundColor: chartColors.red,
       borderColor: chartColors.red,
-      data: [ 22, 28, 28, 20, 27, 29, 28, 24, 23, 20, 20, 27, 27, 20, 23, 23, 23, 28, 20, 22, 28, 28, 20, 27, 29, 28, 24, 23, 20, 20, 27, 27, 20, 23, 23, 23, 28, 20 ],
+      data: [ 7, 4, 6, 9, 15, 11, 18, 21, 29, 20, 11, 11, 7, 9, 8, 19, 14, 15, 16, 10, 10, 26, 24, 24, 32, 25, 18 ],
     }]
   },
   options: {
@@ -330,7 +330,7 @@ var demo_rapid_5 = document.getElementById('demo_rapid_5').getContext('2d');
 var demo_rapid_5_chart = new Chart(demo_rapid_5, {
     type: 'horizontalBar',
     data: {
-        labels: ['All Other Eras', 'Veterans ofIraq/Afghanistan'],
+        labels: ['All Other Eras', 'Veterans of Iraq/Afghanistan'],
         datasets: [{
             label: 'Total', 
             data: [76, 24, 0],
@@ -343,7 +343,7 @@ var demo_rapid_6 = document.getElementById('demo_rapid_6').getContext('2d');
 var demo_rapid_6_chart = new Chart(demo_rapid_6, {
     type: 'horizontalBar',
     data: {
-        labels: ['(1)Minimal Assistance Needed', '(2)Rapdi Re-Housing', '(3)Permanent Supportive', '(4)Permanent Supportive'],
+        labels: ['(1) Minimal Assistance Needed', '(2) Rapid Re-Housing', '(3) Permanent Supportive', '(4) Permanent Supportive'],
         datasets: [{
             label: 'Total', 
             data: [17, 31, 40, 12],
@@ -389,7 +389,7 @@ var demo_em_3 = new Chart(demo_em_3, {
         labels: ['Non-Chronic', 'Chronic'],
         datasets: [{
             label: 'Total', 
-            data: [90, 10, 0],
+            data: [81, 19],
             backgroundColor: chartColors.red,
         }]
     },
@@ -402,7 +402,7 @@ var demo_em_4_chart = new Chart(demo_em_4, {
         labels: ['Male', 'Female'],
         datasets: [{
             label: 'Total', 
-            data: [88, 12, 0],
+            data: [91, 9, 0],
             backgroundColor: chartColors.red,
         }]
     },
@@ -412,10 +412,10 @@ var demo_em_5 = document.getElementById('demo_em_5').getContext('2d');
 var demo_em_5_chart = new Chart(demo_em_5, {
     type: 'horizontalBar',
     data: {
-        labels: ['All Other Eras', 'Veterans ofIraq/Afghanistan'],
+        labels: ['All Other Eras', 'Veterans of Iraq/Afghanistan'],
         datasets: [{
             label: 'Total', 
-            data: [76, 24, 0],
+            data: [79, 21, 0],
             backgroundColor: chartColors.red,
         }]
     },
@@ -425,7 +425,7 @@ var demo_em_6 = document.getElementById('demo_em_6').getContext('2d');
 var demo_em_6_chart = new Chart(demo_em_6, {
     type: 'horizontalBar',
     data: {
-        labels: ['(1)Minimal Assistance Needed', '(2)Rapdi Re-Housing', '(3)Permanent Supportive', '(4)Permanent Supportive'],
+        labels: ['(1) Minimal Assistance Needed', '(2) Rapid Re-Housing', '(3) Permanent Supportive', '(4) Permanent Supportive'],
         datasets: [{
             label: 'Total', 
             data: [17, 31, 40, 12],
@@ -440,10 +440,10 @@ var demo_trans_1 = document.getElementById('demo_trans_1').getContext('2d');
 var demo_trans_1_chart = new Chart(demo_trans_1, {
     type: 'horizontalBar',
     data: {
-        labels: ['Unshelteblue', 'Temporary', 'Permanent', 'Institutional', 'Other'],
+        labels: ['Unsheltered', 'Temporary', 'Permanent', 'Institutional', 'Other'],
         datasets: [{
             label: 'Total', 
-            data: [51, 34, 6, 9, 0],
+            data: [34, 47, 4, 16, 0],
             backgroundColor: chartColors.blue,
         }]
     },
@@ -453,10 +453,10 @@ var demo_trans_2 = document.getElementById('demo_trans_2').getContext('2d');
 var demo_trans_2_chart = new Chart(demo_trans_2, {
     type: 'horizontalBar',
     data: {
-        labels: ['Unshelteblue', 'Temporary', 'Permanent', 'Institutional', 'Other'],
+        labels: ['Unsheltered', 'Temporary', 'Permanent', 'Institutional', 'Other'],
         datasets: [{
             label: 'Total', 
-            data: [10, 33, 17, 18, 22],
+            data: [2, 22, 58, 11, 8],
             backgroundColor: chartColors.blue,
         }]
     },
@@ -469,7 +469,7 @@ var demo_trans_3 = new Chart(demo_trans_3, {
         labels: ['Non-Chronic', 'Chronic'],
         datasets: [{
             label: 'Total', 
-            data: [90, 10, 0],
+            data: [64, 36, 0],
             backgroundColor: chartColors.blue,
         }]
     },
@@ -482,7 +482,7 @@ var demo_trans_4_chart = new Chart(demo_trans_4, {
         labels: ['Male', 'Female'],
         datasets: [{
             label: 'Total', 
-            data: [88, 12, 0],
+            data: [89, 11, 0],
             backgroundColor: chartColors.blue,
         }]
     },
@@ -492,10 +492,10 @@ var demo_trans_5 = document.getElementById('demo_trans_5').getContext('2d');
 var demo_trans_5_chart = new Chart(demo_trans_5, {
     type: 'horizontalBar',
     data: {
-        labels: ['All Other Eras', 'Veterans ofIraq/Afghanistan'],
+        labels: ['All Other Eras', 'Veterans of Iraq/Afghanistan'],
         datasets: [{
             label: 'Total', 
-            data: [76, 24, 0],
+            data: [82, 18, 0],
             backgroundColor: chartColors.blue,
         }]
     },
@@ -505,7 +505,7 @@ var demo_trans_6 = document.getElementById('demo_trans_6').getContext('2d');
 var demo_trans_6_chart = new Chart(demo_trans_6, {
     type: 'horizontalBar',
     data: {
-        labels: ['(1)Minimal Assistance Needed', '(2)Rapdi Re-Housing', '(3)Permanent Supportive', '(4)Permanent Supportive'],
+        labels: ['(1) Minimal Assistance Needed', '(2) Rapid Re-Housing', '(3) Permanent Supportive', '(4) Permanent Supportive'],
         datasets: [{
             label: 'Total', 
             data: [17, 31, 40, 12],
@@ -521,10 +521,10 @@ var demo_perm_1 = document.getElementById('demo_perm_1').getContext('2d');
 var demo_perm_1_chart = new Chart(demo_perm_1, {
     type: 'horizontalBar',
     data: {
-        labels: ['Unsheltelt_green', 'Temporary', 'Permanent', 'Institutional', 'Other'],
+        labels: ['Unsheltered', 'Temporary', 'Permanent', 'Institutional', 'Other'],
         datasets: [{
             label: 'Total', 
-            data: [51, 34, 6, 9, 0],
+            data: [31, 49, 0, 19, 0],
             backgroundColor: chartColors.lt_green,
         }]
     },
@@ -534,10 +534,10 @@ var demo_perm_2 = document.getElementById('demo_perm_2').getContext('2d');
 var demo_perm_2_chart = new Chart(demo_perm_2, {
     type: 'horizontalBar',
     data: {
-        labels: ['Unsheltelt_green', 'Temporary', 'Permanent', 'Institutional', 'Other'],
+        labels: ['Unsheltered', 'Temporary', 'Permanent', 'Institutional', 'Other'],
         datasets: [{
             label: 'Total', 
-            data: [10, 33, 17, 18, 22],
+            data: [5, 17, 64, 14, 0],
             backgroundColor: chartColors.lt_green,
         }]
     },
@@ -550,7 +550,7 @@ var demo_perm_3 = new Chart(demo_perm_3, {
         labels: ['Non-Chronic', 'Chronic'],
         datasets: [{
             label: 'Total', 
-            data: [90, 10, 0],
+            data: [0, 0, 0],
             backgroundColor: chartColors.lt_green,
         }]
     },
@@ -563,7 +563,7 @@ var demo_perm_4_chart = new Chart(demo_perm_4, {
         labels: ['Male', 'Female'],
         datasets: [{
             label: 'Total', 
-            data: [88, 12, 0],
+            data: [89, 11, 0],
             backgroundColor: chartColors.lt_green,
         }]
     },
@@ -573,10 +573,10 @@ var demo_perm_5 = document.getElementById('demo_perm_5').getContext('2d');
 var demo_perm_5_chart = new Chart(demo_perm_5, {
     type: 'horizontalBar',
     data: {
-        labels: ['All Other Eras', 'Veterans ofIraq/Afghanistan'],
+        labels: ['All Other Eras', 'Veterans of Iraq/Afghanistan'],
         datasets: [{
             label: 'Total', 
-            data: [76, 24, 0],
+            data: [88, 12, 0],
             backgroundColor: chartColors.lt_green,
         }]
     },
@@ -586,7 +586,7 @@ var demo_perm_6 = document.getElementById('demo_perm_6').getContext('2d');
 var demo_perm_6_chart = new Chart(demo_perm_6, {
     type: 'horizontalBar',
     data: {
-        labels: ['(1)Minimal Assistance Needed', '(2)Rapdi Re-Housing', '(3)Permanent Supportive', '(4)Permanent Supportive'],
+        labels: ['(1) Minimal Assistance Needed', '(2) Rapid Re-Housing', '(3) Permanent Supportive', '(4) Permanent Supportive'],
         datasets: [{
             label: 'Total', 
             data: [17, 31, 40, 12],
