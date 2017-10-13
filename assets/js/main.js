@@ -376,7 +376,7 @@ var demo_em_2_chart = new Chart(demo_em_2, {
         labels: ['Unsheltered', 'Temporary', 'Permanent', 'Institutional', 'Other'],
         datasets: [{
             label: 'Total', 
-            data: [10, 33, 17, 18, 22],
+            data: [10, 33, 17, 18, 22, 0],
             backgroundColor: chartColors.red,
         }]
     },
